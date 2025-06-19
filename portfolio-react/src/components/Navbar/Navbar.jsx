@@ -1,27 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
-  return (
-    <nav className="bg-gray-900 text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          {/* Título y subtítulo */}
-          <div>
-            <h1 className="text-2xl font-bold tracking-wide">Mi Portfolio</h1>
-            <p className="text-sm text-gray-400">Ingeniero de Sistemas</p>
-          </div>
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-          {/* Menú de navegación */}
-          <div className="hidden md:flex space-x-8 text-base font-medium">
-            <a href="#inicio" className="hover:text-cyan-400 transition">Inicio</a>
-            <a href="#proyectos" className="hover:text-cyan-400 transition">Proyectos</a>
-            <a href="#habilidades" className="hover:text-cyan-400 transition">Habilidades</a>
-            <a href="#contacto" className="hover:text-cyan-400 transition">Contacto</a>
-            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition">
-              CV
-            </a>
-          </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path ? 'active' : '';
+  };
+
+  return (
+    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+          <span className="logo-text">Luis<span>FCS</span></span>
+        </Link>
+
+        <div className={`menu-icon ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+
+        <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
+          <li className="nav-item">
+            <Link to="/" className={`nav-link ${isActive('/')}`} onClick={closeMenu}>
+              Inicio
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/projects" className={`nav-link ${isActive('/projects')}`} onClick={closeMenu}>
+              Proyectos
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact" className={`nav-link ${isActive('/contact')}`} onClick={closeMenu}>
+              Contacto
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );

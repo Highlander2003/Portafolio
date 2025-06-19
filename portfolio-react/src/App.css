@@ -68,3 +68,59 @@ a:hover {
         padding: 15px;
     }
 }
+/* Barra de progreso de scroll */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  z-index: 9999;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #bb86fc, #3700b3);
+  width: 0%;
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.7);
+  transition: width 0.05s ease;
+}
+
+/* Scroll suave para toda la página */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* Mejoras en las transiciones globales */
+* {
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-property: background-color, transform, opacity, box-shadow;
+}
+
+/* Efecto de revelación para secciones */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Garantizar que las imágenes no rompan el diseño */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mejorar la experiencia en dispositivos móviles */
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(20px);
+  }
+}

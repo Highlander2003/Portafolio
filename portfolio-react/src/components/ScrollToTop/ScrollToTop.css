@@ -1,0 +1,55 @@
+/* filepath: E:\Programacion\PersonalProyect\Portafolio\portfolio-react\src\components\ScrollToTop\ScrollToTop.css */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #bb86fc, #3700b3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(187, 134, 252, 0.3);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(187, 134, 252, 0.5);
+}
+
+.scroll-to-top .arrow {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top:hover .arrow {
+  transform: rotate(-360deg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(187, 134, 252, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(187, 134, 252, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(187, 134, 252, 0); }
+}
