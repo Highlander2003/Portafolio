@@ -1,0 +1,58 @@
+.project-card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  max-width: 350px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.project-details {
+  padding: 20px;
+}
+
+.project-details h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.technologies {
+  margin: 15px 0;
+}
+
+.tech-tag {
+  display: inline-block;
+  background-color: #3700b3;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.project-links {
+  margin-top: 20px;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #bb86fc;
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}

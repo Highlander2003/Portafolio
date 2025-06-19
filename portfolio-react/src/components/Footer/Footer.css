@@ -1,0 +1,20 @@
+.footer {
+  background-color: #121212;
+  padding: 50px 20px 30px;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid #333;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin-bottom: 20px;
+  color: #999;
+}
+
+.social-links {
+  m

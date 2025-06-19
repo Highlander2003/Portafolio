@@ -1,0 +1,33 @@
+.skills-section {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.skills-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skills-section h2 {
+  margin-bottom: 60px;
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  color: #fff;
+}
+
+.skills-section h2::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, #bb86fc, #3700b3);
+  bottom: -15px;
+  left: 25%;
+  border-radius: 2px;
+}
+
+.skill-item {
+  margin-b
