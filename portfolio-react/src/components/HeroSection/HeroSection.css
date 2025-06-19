@@ -10,6 +10,8 @@
   color: white;
   text-align: center;
   position: relative;
+  margin-top: 80px; /* Añade margen superior para compensar la altura del navbar */
+  padding-top: 40px; /* Aumenta el padding superior existente */
 }
 
 .hero-content {
@@ -20,6 +22,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   animation: fadeIn 1s ease-out;
+  padding-top: 3rem; /* Aumenta el padding superior del contenido */
 }
 
 .hero-content h1 {

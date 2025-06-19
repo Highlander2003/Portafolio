@@ -1,12 +1,15 @@
 .navbar {
   background-color: rgba(18, 18, 18, 0.95);
   padding: 1rem 0;
-  position: sticky;
+  position: fixed; /* Aseguramos que esté fijo */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
+  margin-bottom: 2rem; /* Aumentar el margen inferior del navbar */
 }
 
 .navbar-scrolled {
@@ -160,6 +163,31 @@
   .nav-link::after {
     display: none;
   }
+
+  .hero-section {
+    padding-top: 80px; /* Un poco menos en pantallas pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-section {
+    padding-top: 60px;
+  }
+}
+
+/* O alternativamente, añadir padding superior a la sección del título */
+.hero-section, .title-container {
+  padding-top: 5rem; /* Ajustar según sea necesario */
+}
+
+.hero-section {
+  padding-top: 100px; /* Ajusta este valor según la altura de tu navbar */
+  /* otros estilos existentes */
+}
+
+.title-container h1 {
+  margin-top: 2rem; /* Espacio adicional para el título */
+  /* otros estilos existentes */
 }
 
 /* Animación para los elementos del menú */
@@ -172,4 +200,8 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.main-content {
+  padding-top: calc(navbar-height + desired-spacing);
 }

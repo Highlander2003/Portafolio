@@ -33,7 +33,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`} style={{
+      position: "fixed",
+      width: "100%",
+      top: 0,
+      zIndex: 1000,
+    }}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <span className="logo-text">Luis<span>FCS</span></span>
