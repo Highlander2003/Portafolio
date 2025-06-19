@@ -31,4 +31,36 @@ const SkillsSection = () => {
       observer.observe(skillsRef.current);
     }
 
- 
+    return () => {
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
+    };
+  }, [skills]);
+
+  return (
+    <section className="skills-section" ref={skillsRef}>
+      <div className="container">
+        <h2>Mis habilidades</h2>
+        <div className="skills-container">
+          {skills.map((skill, index) => (
+            <div className="skill-item" key={index}>
+              <div className="skill-header">
+                <h3>{skill.name}</h3>
+                <span>{skill.level}%</span>
+              </div>
+              <div className="skill-bar">
+                <div 
+                  className="skill-progress" 
+                  style={{ width: "0%" }}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SkillsSection;

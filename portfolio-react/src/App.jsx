@@ -8,6 +8,8 @@ import Projects from './pages/Projects/Projects';
 import Contact from './pages/Contact/Contact';
 import './App.css';
 
+
+
 const App = () => {
   return (
     <Router>
@@ -23,6 +25,6 @@ const App = () => {
       </div>
     </Router>
   );
-};
+}
 
 export default App;
